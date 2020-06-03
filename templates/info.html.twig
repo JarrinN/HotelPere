@@ -1,0 +1,30 @@
+{% extends "catalogo.html.twig" %}
+{% block pisos %}
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="display-5">
+                Habitación {{room.tipo.nombre}}{% if room.terraza == true %} con terraza {% endif %}
+            </h3>
+            <hr>
+            
+        </div>
+        <div class="col-12 justify-content-center">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    
+                        <img src="" class="d-block w-80" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p></p>
+        </div>
+    </div>
+{% endblock %}

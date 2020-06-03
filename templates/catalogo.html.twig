@@ -1,0 +1,43 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+    <div class="col-12 justify-content-center mt-4">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('catalogo') }}">Todas</a
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('individual') }}">Individual</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('doble') }}">Doble</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('triple') }}">Triple</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('familiar') }}">Familiar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('quad') }}">Quadruple</a>
+            </li>
+        </ul>
+    </div>
+    {% block pisos %}
+        <div class="row mt-5">
+        {% for habitacion in habitaciones %}
+            <div class="col-6 mb-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        Habitacion individual {{ habitacion.num }}  {% if habitacion.terraza == 1 %} con terraza {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ habitacion.tipo.nombre }}</h5>
+                        <p class="card-text">{{ habitacion.tipo.descripcion }}</p>
+                        <a href="{{ path('info',{'num' : habitacion.num }) }}" class="btn btn-primary">Más Información</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% endblock %}
+{% endblock %}

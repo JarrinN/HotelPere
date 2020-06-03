@@ -1,0 +1,33 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+    <div class="container m-3">
+        <div class="row">
+            <div class="col-6">
+                <div class="card text-center">
+                    <div class="card-header text-white" style="background:#f55442">
+                        <b>Login</b>
+                    </div>
+                    <div class="card-body">
+                    {% if error %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{error.messageKey}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endif %}
+                        <div class="form-group">
+                                <form action="{{ path('login') }}" method="post">
+                                <input type="text" id="username" class="form-control" name="_username" value="{{ last_username }}" placeholder="Usuario"/>
+                                <input type="password" id="password" class="form-control" name="_password" placeholder="Contraseña"/>
+                                <button type="submit" class="btn btn-large btn-block btn-secondary mt-3">Entrar</button>
+                            </form>
+                            
+                        </div>
+                        <span>¿Todavía no te has registrado? <a href="{{ path('registro') }}">Click aquí</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+{% endblock %}

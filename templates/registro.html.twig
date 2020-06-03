@@ -1,0 +1,11 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-6 mt-4">
+            <h2 class="">Nuevo Usuario</h2>
+            {{ form_start(formulario) }}
+            {{ form_widget(formulario) }}
+            {{ form_end(formulario) }}
+        </div>
+    </div>
+{% endblock %}
